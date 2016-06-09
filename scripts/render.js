@@ -12,7 +12,7 @@ function render (model, done) {
   <head>
     <title>pull-stream</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="bundle.js">
+    <link rel="stylesheet" href="bundle.css">
   </head>
   <body>
     <main></main>
