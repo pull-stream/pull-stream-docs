@@ -2,11 +2,14 @@ const fs = require('fs')
 const ghAuth = require('ghauth')
 const ecosystem = require('ecosystem-docs')
 
+const util = require('./util')
 const config = require('../config')
 
 module.exports = syncModules
 
-function syncModules (moduleList, done) {
+function syncModules (modules, done) {
+  const moduleList = util.toModuleList(modules)
+
   ghAuth({
     configName: 'ecosystem-docs',
     userAgent: 'ecosystem-docs',
