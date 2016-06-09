@@ -14,6 +14,7 @@
     "watch:html": "chokidar 'scripts/*.js' -c $(which node)' scripts html'",
     "watch:js": "budo src:bundle.js -d src --live -- -d",
     "watch": "npm-run-all -p watch:*",
+    "start": "npm run watch",
     "disc": "npm run --silent bundle -- --full-paths | discify --open",
     "push": "gh-pages -d src",
     "deploy": "npm-run-all -s build push"

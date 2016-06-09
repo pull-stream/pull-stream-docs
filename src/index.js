@@ -9,7 +9,7 @@ const app = {
     return { model: model }
   },
   view: (model) => inu.html`
-    <main>hey!</main>
+    <main>pull-stream!</main>
   `
 }
 

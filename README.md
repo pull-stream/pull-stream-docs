@@ -2,6 +2,28 @@
 
 pull stream ecosystem docs
 
+## developer how to
+
+### install
+
+```shell
+git clone git://github.com/pull-stream/pull-stream-docs
+cd pull-stream-docs
+npm install
+```
+
+### start development server
+
+```shell
+npm start
+```
+
+### deploy to production
+
+```shell
+npm run deploy
+```
+
 ## inspiration
 
 - [stackgl/packages](https://github.com/stackgl/packages)
