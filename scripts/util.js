@@ -2,18 +2,6 @@ function toModuleList (modules) {
   return modules.map(module => module.path)
 }
 
-function reattachCategories (modules, modulesWithCategories) {
-  return modules.map(module => {
-    const category = modulesWithCategories
-      .find((moduleWithCategory) => {
-        return module.path === moduleWithCategory.path
-      })
-      .category
-
-    return Object.assign(module, { category })
-  })
-}
-
 function indexByKey (key, array) {
   return array.reduce((sofar, value) => {
     const index = value[key]
@@ -27,6 +15,5 @@ function indexByKey (key, array) {
 
 module.exports = {
   toModuleList,
-  reattachCategories,
   indexByCategory: indexByKey.bind(null, 'category')
 }

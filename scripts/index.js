@@ -1,7 +1,7 @@
 const modules = require('./modules')
 const commands = {
   sync: require('./sync'),
-  build: require('./build')
+  html: require('./html')
 }
 const command = process.argv[2]
 

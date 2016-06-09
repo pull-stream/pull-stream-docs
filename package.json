@@ -5,15 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "tape test.js",
-    "start": "budo example:bundle.js -d example --live -- -d",
-    "bundle": "browserify example -g envify -g uglifyify",
-    "build": "npm run --silent bundle -- -o example/bundle.js",
+    "bundle": "browserify src -g envify -g uglifyify",
+    "build:sync": "node scripts sync",
+    "build:html": "node scripts html",
+    "build:js": "npm run --silent bundle -- -o src/bundle.js",
+    "build": "npm-run-all -s build:*",
+    "watch:sync": "chokidar 'scripts/sync.js' -c $(which node)' scripts sync'",
+    "watch:html": "chokidar 'scripts/*.js' -c $(which node)' scripts html'",
+    "watch:js": "budo src:bundle.js -d src --live -- -d",
+    "watch": "npm-run-all -p watch:*",
     "disc": "npm run --silent bundle -- --full-paths | discify --open",
-    "push": "gh-pages -d example",
+    "push": "gh-pages -d src",
     "deploy": "npm-run-all -s build push"
   },
   "browserify": {
-    "transform": []
+    "transform": [
+      "es2020"
+    ]
   },
   "remarkConfig": {
     "settings": {
@@ -35,14 +43,15 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "budo": "^8.1.0",
+    "chokidar-cli": "^1.2.0",
     "disc": "^1.3.2",
     "ecosystem-docs": "^1.1.1",
     "envify": "^3.4.0",
+    "es2020": "^1.1.6",
     "gh-pages": "^0.11.0",
     "ghauth": "^3.2.0",
     "npm-run-all": "^1.6.0",
     "remark": "^4.2.2",
-    "run-waterfall": "^1.1.3",
     "tape": "^4.5.1",
     "uglifyify": "^3.0.1",
     "watchify": "^3.7.0"
