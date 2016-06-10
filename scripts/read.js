@@ -1,4 +1,11 @@
+const fs = require('fs')
+const Path = require('path')
 const ecosystem = require('ecosystem-docs')
+const remark = require('remark')
+const html = require('remark-html')
+const github = require('remark-github')
+const highlight = require('remark-highlight.js')
+const cheerio = require('cheerio')
 
 const util = require('./util')
 const config = require('../config')
@@ -13,15 +20,29 @@ function readModules (modules, done) {
   }, (err, data) => {
     if (err) { return done(err) }
 
-    done(null, formatData(modules, data))
+    data = formatData(modules, data)
+
+    const coreModule = data.modules.find((module) => {
+      return module.category === 'core'
+    })
+    getCoreModules(coreModule, config.core).map((module) => {
+      data.modules.push(module)
+    })
+    coreModule.category = null
+
+    done(null, data)
   })
 }
 
 function formatData (origModules, data) {
-  var contributors = []
+  const contributors = []
+  const categories = []
   return {
     contributors: contributors,
+    categories: categories,
     modules: data.map((module) => {
+      const category = getCategory(origModules, module)
+      if (categories.indexOf(category) === -1) categories.push(category)
       return {
         user: module.user,
         name: module.name,
@@ -29,10 +50,11 @@ function formatData (origModules, data) {
         name: module.name,
         stars: module.stars,
         issues: module.issues,
+        readme: formatReadme(module),
         contributors: indexContributors(contributors, module.contributors),
         version: module.package && module.package.version || false,
         npmName: module.package && module.package.name || false,
-        category: getCategory(origModules, module)
+        category: category
       }
     })
   }
@@ -58,10 +80,120 @@ function formatContributor (contributor) {
   }
 }
 
+function formatReadme (module) {
+  const ast = remark.parse(module.readme)
+
+  // remove all content before the first heading
+  for (var i = 0; i < ast.children.length; i++) {
+    var child = ast.children[i]
+    if (child.type === 'heading') break
+    ast.children.splice(i--, 1)
+  }
+
+  // ensure there's only one <h1> in the document,
+  // and that <h1/h2>'s that are code-only are at least <h3>
+  for (; i < ast.children.length; i++) {
+    var child = ast.children[i]
+    if (child.type !== 'heading') continue
+    if (child.depth === 1) child.depth = 2
+    if (child.depth === 2) {
+      if (child.children.length !== 1) continue
+      if (child.children[0].type !== 'inlineCode') continue
+      child.depth = 3
+    }
+  }
+
+  var $ = cheerio.load(
+    remark()
+      .use([html, github, highlight])
+      .process(remark.stringify(ast))
+  )
+
+  // Remove badges
+  $('img[src*="://img.shields.io"]').remove()
+  $('img[src*="://badges.github.io"]').remove()
+  $('img[src*="://nodei.co"]').remove()
+  $('img[src*="://david-dm.org"]').remove()
+  $('img[src*="://badge.fury.io"]').remove()
+  $('img[src*="://travis-ci.org"]').remove()
+  $('img[src*="://secure.travis-ci.org"]').remove()
+  $('img[src*="://ci.testling.com"]').remove()
+
+  $('h1 img').remove()
+
+  // Resolve relative URLs in READMEs for images and anchors
+  $('a:not([href^=http]):not([href^=#])').each(function(i,el) {
+    var $a = $(el)
+    $a.attr('href', 'http://github.com/' + module.path + '/blob/master/' + (module.subpath || '') + $a.attr('href'))
+  })
+
+  $('img:not([src^=http])').each(function(i,el) {
+    var $img = $(el)
+    $img.attr('src', 'https://raw.githubusercontent.com/' + module.path + '/master/' (module.subpath || '') + $img.attr('src'))
+  })
+
+  // guarantee that the first heading is an <h1>,
+  // and wrap it up in an <a> link to the repository.
+  var headings = $('h1, h2, h3, h4, h5, h6')
+  if (headings && headings[0] && module.path) {
+    $(headings[0]).replaceWith($(
+        '<h1 class="title">'
+      + '<a target="_blank" href="https://github.com/'+module.path+ (module.subpath ? `/blob/master/${module.subpath}.md` : '')+'">'
+      + $(headings[0]).text()
+      + '</a>'
+      + '<div class="contrib"></div>'
+      + '</h1>'
+    ))
+  }
+  
+  return $.html()
+}
+
 function getCategory (modulesWithCategory, module) {
   return modulesWithCategory
     .find((moduleWithCategory) => {
       return module.path === moduleWithCategory.path
     })
     .category
+}
+
+function getCoreModules (coreModule, corePath) {
+  const modules = []
+  ;['sources', 'throughs', 'sinks'].forEach((type) => {
+    const typePath = Path.join(corePath, type)
+    const moduleNames = fs.readdirSync(typePath)
+      .filter(p => p.endsWith('.js'))
+      .filter(p => p !== 'index.js')
+      .map(p => p.slice(0, -3))
+
+    moduleNames.forEach((moduleName) => {
+      const readmePath = Path.join(corePath, type, moduleName + '.md')
+      var readme
+      try {
+        readme = fs.readFileSync(readmePath, 'utf8')
+      } catch (err) {
+        if (err.code !== 'ENOENT') { throw err }
+        readme = `# ${coreModule.name}/${type}/${moduleName}`
+      }
+      var module = {
+        user: coreModule.user,
+        name: Path.join(type, moduleName),
+        path: coreModule.path,
+        subpath: Path.join(type, moduleName),
+        stars: coreModule.stars,
+        issues: coreModule.issues,
+        readme: readme,
+        contributors: coreModule.contributors,
+        version: coreModule.package && coreModule.package.version || false,
+        npmName: coreModule.package && coreModule.package.name || false,
+        category: coreModule.category
+      }
+      module = Object.assign(module, {
+        readme: formatReadme(module)
+      })
+      modules.push(module)
+    })
+  })
+
+  return modules
 }

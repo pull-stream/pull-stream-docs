@@ -1,3 +1,7 @@
+# core
+
+* pull-stream/pull-stream
+
 # combinators
 
 * pull-stream/pull-cat

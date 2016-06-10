@@ -1,5 +1,6 @@
 const fs = require('fs')
 const inu = require('inu')
+const parallel = require('run-parallel')
 
 const config = require('../config')
 
@@ -16,13 +17,17 @@ function render (model, done) {
   </head>
   <body>
     <main></main>
-    <script>
-      window.model = ${JSON.stringify(model)}
-    </script>
     <script src="bundle.js"></script>
   </body>
 </html>
   `
 
-  fs.writeFile(config.index, html, done)
+  parallel([
+    (cb) => {
+      fs.writeFile(config.index, html, cb)
+    },
+    (cb) => {
+      fs.writeFile(config.model, JSON.stringify(model), cb)
+    }
+  ], done)
 }
