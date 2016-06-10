@@ -14,7 +14,7 @@ module.exports = {
       case 'router:set':
         return { model: action.payload }
       default:
-        return { model }
+        return { model: model }
     }
   },
 
