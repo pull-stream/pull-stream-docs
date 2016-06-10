@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tape test.js",
-    "bundle": "browserify src -g envify -g uglifyify",
+    "bundle": "browserify src -g envify -g uglifyify -p [ css-extract -o src/bundle.css ]",
     "build:sync": "node scripts sync",
     "build:html": "node scripts html",
     "build:js": "npm run --silent bundle -- -o src/bundle.js",
@@ -49,6 +49,7 @@
     "budo": "^8.1.0",
     "cheerio": "^0.20.0",
     "chokidar-cli": "^1.2.0",
+    "css-extract": "^1.1.0",
     "disc": "^1.3.2",
     "ecosystem-docs": "^1.1.1",
     "envify": "^3.4.0",
