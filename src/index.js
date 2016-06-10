@@ -4,6 +4,8 @@ const pull = inu.pull
 const find = require('array-find')
 const css = require('sheetify')
 
+css('normalize.css')
+
 const model = JSON.parse(
   fs.readFileSync(__dirname + '/model.json', 'utf8')
 )
