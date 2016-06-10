@@ -16,7 +16,7 @@
     "watch": "npm-run-all -p watch:*",
     "start": "npm-run-all -s build:sync build:html watch",
     "disc": "npm run --silent bundle -- --full-paths | discify --open",
-    "push": "gh-pages -d src",
+    "push": "gh-pages -d src -r git@github.com:pull-stream/pull-stream.github.io -b master",
     "deploy": "npm-run-all -s build push"
   },
   "browserify": {
