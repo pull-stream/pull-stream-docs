@@ -159,6 +159,11 @@ function getCategory (modulesWithCategory, module) {
 
 function getCoreModules (coreModule, corePath) {
   const modules = []
+
+  ;['pull'].forEach((moduleName) => {
+    modules.push(readCoreModule(coreModule, corePath, moduleName, moduleName))
+  })
+
   ;['sources', 'throughs', 'sinks'].forEach((type) => {
     const typePath = Path.join(corePath, type)
     const moduleNames = fs.readdirSync(typePath)
@@ -167,33 +172,40 @@ function getCoreModules (coreModule, corePath) {
       .map(p => p.slice(0, -3))
 
     moduleNames.forEach((moduleName) => {
-      const readmePath = Path.join(corePath, type, moduleName + '.md')
-      var readme
-      try {
-        readme = fs.readFileSync(readmePath, 'utf8')
-      } catch (err) {
-        if (err.code !== 'ENOENT') { throw err }
-        readme = `# ${coreModule.name}/${type}/${moduleName}`
-      }
-      var module = {
-        user: coreModule.user,
-        name: Path.join(type, moduleName),
-        path: coreModule.path,
-        subpath: Path.join(type, moduleName),
-        stars: coreModule.stars,
-        issues: coreModule.issues,
-        readme: readme,
-        contributors: coreModule.contributors,
-        version: coreModule.package && coreModule.package.version || false,
-        npmName: coreModule.package && coreModule.package.name || false,
-        category: coreModule.category
-      }
-      module = Object.assign(module, {
-        readme: formatReadme(module)
-      })
-      modules.push(module)
+      const modulePath = Path.join(type, moduleName)
+      modules.push(readCoreModule(coreModule, corePath, moduleName, modulePath))
     })
   })
 
   return modules
+}
+
+function readCoreModule (coreModule, corePath, moduleName, modulePath) {
+  const requirePath = Path.join(coreModule.name, modulePath)
+  const readmePath = Path.join(corePath, 'docs', modulePath + '.md')
+
+  var readme
+  try {
+    readme = fs.readFileSync(readmePath, 'utf8')
+  } catch (err) {
+    if (err.code !== 'ENOENT') { throw err }
+    readme = `# ${requirePath}`
+  }
+
+  var module = {
+    user: coreModule.user,
+    name: moduleName,
+    path: coreModule.path,
+    subpath: modulePath,
+    stars: coreModule.stars,
+    issues: coreModule.issues,
+    readme: readme,
+    contributors: coreModule.contributors,
+    version: coreModule.package && coreModule.package.version || false,
+    npmName: coreModule.package && coreModule.package.name || false,
+    category: coreModule.category
+  }
+  return Object.assign(module, {
+    readme: formatReadme(module)
+  })
 }
