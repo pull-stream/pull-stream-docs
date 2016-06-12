@@ -15,8 +15,18 @@ const nav = require('./views/nav')
 const modulePage = require('./views/module-page')
 
 const prefix = css`
-  :host {
-    display: flex;
+  nav {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 332px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  article {
+    margin-left: 332px;
   }
 `
 
