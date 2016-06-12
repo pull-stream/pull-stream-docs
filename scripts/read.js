@@ -76,7 +76,7 @@ function indexContributors (indexed, contributors) {
 function formatContributor (contributor) {
   return {
     name: contributor.login,
-    avatar: contributor.avatar_url
+    image: contributor.avatar_url
   }
 }
 
