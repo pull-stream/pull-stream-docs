@@ -32,7 +32,7 @@
 
 * pull-stream/pull-glob
 * pull-stream/pull-level
-* dominictarr/pull-fs
+* DamonOehlman/pull-file
 * dominictarr/pull-write
 * dominictarr/pull-write-file
 * pull-stream/pull-watch
