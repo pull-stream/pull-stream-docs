@@ -13,22 +13,35 @@
 * pull-stream/pull-through
 * pull-stream/pull-traverse
 * pull-stream/pull-window
+* pull-stream/pull-next
+* pull-stream/pull-zip
+* pull-stream/pull-sort
+* pull-stream/pull-sorted-merge
+* pull-stream/pull-tee
+* pull-stream/pull-high-watermark
+* pull-stream/pull-abortable
+* pull-stream/pull-peek
 
-# push
+# real-time
 
 * pull-stream/pull-pushable
 * pull-stream/pull-notify
+* pull-stream/pull-live
 
 # file system and databases
 
 * pull-stream/pull-glob
 * pull-stream/pull-level
 * dominictarr/pull-fs
+* dominictarr/pull-write
+* dominictarr/pull-write-file
+* pull-stream/pull-watch
 
 # text
 
 * pull-stream/pull-split
 * pull-stream/pull-stringify
+* pull-stream/pull-utf8-decoder
 
 # binary
 
@@ -41,6 +54,7 @@
 * DamonOehlman/pull-ws
 * pull-stream/pull-ws-server
 * ssbc/muxrpc
+* pull-stream/pull-http-server
 
 # interop
 
