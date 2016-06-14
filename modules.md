@@ -41,6 +41,7 @@
 
 * pull-stream/pull-split
 * pull-stream/pull-stringify
+* dominictarr/pull-json-doubleline
 * pull-stream/pull-utf8-decoder
 
 # binary
