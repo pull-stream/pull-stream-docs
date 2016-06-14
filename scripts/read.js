@@ -118,6 +118,8 @@ function formatReadme (module) {
   $('img[src*="://travis-ci.org"]').remove()
   $('img[src*="://secure.travis-ci.org"]').remove()
   $('img[src*="://ci.testling.com"]').remove()
+  $('img[src*="://coveralls.io"]').remove()
+  $('img[src*="://circleci.com"]').remove()
 
   $('h1 img').remove()
 
