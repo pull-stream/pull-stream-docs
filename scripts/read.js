@@ -126,12 +126,12 @@ function formatReadme (module) {
   // Resolve relative URLs in READMEs for images and anchors
   $('a:not([href^=http]):not([href^=#])').each(function(i,el) {
     var $a = $(el)
-    $a.attr('href', 'http://github.com/' + module.path + '/blob/master/' + (module.subpath || '') + $a.attr('href'))
+    $a.attr('href', 'http://github.com/' + module.path + '/blob/master/' + (module.subpath ? `docs/${module.subpath}/../` : '') + $a.attr('href'))
   })
 
   $('img:not([src^=http])').each(function(i,el) {
     var $img = $(el)
-    $img.attr('src', 'https://raw.githubusercontent.com/' + module.path + '/master/' (module.subpath || '') + $img.attr('src'))
+    $img.attr('src', 'https://raw.githubusercontent.com/' + module.path + '/master/' (module.subpath ? `docs/${module.subpath}/../` : '') + $img.attr('src'))
   })
 
   // guarantee that the first heading is an <h1>,
@@ -140,7 +140,7 @@ function formatReadme (module) {
   if (headings && headings[0] && module.path) {
     $(headings[0]).replaceWith($(
         '<h1 class="title">'
-      + '<a target="_blank" href="https://github.com/'+module.path+ (module.subpath ? `/blob/master/${module.subpath}.md` : '')+'">'
+      + '<a target="_blank" href="https://github.com/'+module.path+ (module.subpath ? `/blob/master/docs/${module.subpath}.md` : '')+'">'
       + $(headings[0]).text()
       + '</a>'
       + '<div class="contrib"></div>'
