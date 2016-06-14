@@ -48,6 +48,7 @@
 * pull-stream/pull-handshake
 * dominictarr/pull-randomly-split
 * dominictarr/pull-reader
+* dignifiedquire/pull-length-prefixed
 
 # networks
 
