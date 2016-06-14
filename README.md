@@ -1,8 +1,19 @@
 # pull-stream-docs
 
-pull stream ecosystem docs
+- uses [`ecosystem-docs`](https://github.com/hughsk/ecosystem-docs) to aggregate modules within the `pull-stream` ecosystem, both inside the [`pull-stream` org](https://github.com/pull-stream) and out.
+- using [`inu`](https://github.com/ahdinosaur/inu) to render a static website to discover and reference modules within the `pull-stream` ecosystem.
 
-## developer how to
+the list of modules included within the ecosystem is [./modules.md](./modules.md).
+
+the built output is [`pull-stream/pull-stream.github.io`](https://github.com/pull-stream/pull-stream.github.io) which is rendered at <https://pull-stream.github.io>.
+
+## adding a module to the ecosystem
+
+1. edit [./modules.md](./modules.md) to include your module within the appropriate category.
+1. submit a pull request here to apply this change.
+1. a `pull-stream` maintainer will merge your change and re-deploy the website.
+
+## maintainer how to
 
 ### install
 
