@@ -17,7 +17,7 @@ function nav (model) {
                 .filter(m => m.category === category)
                 .map((module) => {
                   return html`
-                    <a href=${`#/${module.name}`}>
+                    <a href=${`#${module.name}`}>
                       <li>${module.name}</li>
                     </a>
                   `
