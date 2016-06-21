@@ -32,6 +32,7 @@ npm start
 ### deploy to production
 
 ```shell
+npm run deploy:remote
 npm run deploy
 ```
 

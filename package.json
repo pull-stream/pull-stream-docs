@@ -4,7 +4,7 @@
   "description": "pull stream ecosystem docs",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js",
+    "test": "true",
     "bundle": "browserify src -g envify -g uglifyify -p [ css-extract -o src/bundle.css ]",
     "build:sync": "node scripts sync",
     "build:html": "node scripts html",
@@ -16,7 +16,8 @@
     "watch": "npm-run-all -p watch:*",
     "start": "npm-run-all -s build:sync build:html watch",
     "disc": "npm run --silent bundle -- --full-paths | discify --open",
-    "push": "gh-pages -d src -r git@github.com:pull-stream/pull-stream.github.io -b master",
+    "push": "gh-pages -d src -o deploy -b master",
+    "deploy:remote": "git remote add deploy git@github.com:pull-stream/pull-stream.github.io",
     "deploy": "npm-run-all -s build push"
   },
   "browserify": {

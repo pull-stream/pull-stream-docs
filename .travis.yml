@@ -1,0 +1,15 @@
+branches:
+  only:
+  - master
+before_script:
+- git config --global user.email "michael.williams@enspiral.com"
+- git config --global user.name "Mikey"
+- git remote add deploy https://ahdinosaur:${GH_TOKEN}@github.com/pull-stream/pull-stream.github.io.git
+script: npm run deploy
+env:
+  global:
+    secure: Y4Z19AA5X+XM88/eXKKPaERe7Vahx6SCsHv98v9BlL2jl9lUve0U8UThTuuSIcw3hq9y8vdPpphGRaZNt5SSdupyF6kkmGlrYlDWPbN6+j3QbiFqzRmBj6oAiDsdou69Z54WoGOPkOqmxSvOdKT+6EZYt2NXgvv1a1/2s5w6iOrwpQH8HvAbwqUJQKat2nO4NohR5ylrabABVWkU1ftetwggLrIfjbr7YnMzzORiOWnv2UERtASOiLtYIXz4cpv3jSe90OWmd8REHa6e1OjMA77YCRmGw4FG2cdBosGGpU4cVi2Qq/GNkM51hwlG1vKQo248iea5d9RUXBgsIoL5u70CBGII3wXfWbXePbG7yFNbagd/9UfYUVi5yjsuc1MQxFhzeJfGqY9fCAW7+ucQ4taKJDWyjgIv9h3e6kPmOZ+HiXElLgPtsU/pXMND70cJoaEQySqDTwIWlV2Sav5xXFL1LGJx5SXgFeo6T5KVV9lonbSiUggUVDdk+WFHzp9+xZAzPlivE+TXeOBCQ0nhjVmShk3ZP7xucwcLOIJf5Oa21Sw6gZd4JRRA2cWn6oSlYXXSapYAWY/d2ZyRqBXX1qOtSZ9duLqSgXiB1fNTDiN3BkWLkNbmOS8UigSqaeEkAxqmhzEsUIlBmq+ciPsqav8NRQ5lQacfUsTE0Hq7mm8=
+cache:
+  directories:
+    - node_modules
+    - .data
