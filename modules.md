@@ -21,6 +21,7 @@
 * pull-stream/pull-high-watermark
 * pull-stream/pull-abortable
 * pull-stream/pull-peek
+* regular/pull-generate
 
 # real-time
 
@@ -57,6 +58,7 @@
 * pull-stream/pull-ws-server
 * ssbc/muxrpc
 * pull-stream/pull-http-server
+* regular/pull-paginated-api-request
 
 # interop
 
