@@ -21,6 +21,7 @@
 * pull-stream/pull-high-watermark
 * pull-stream/pull-abortable
 * pull-stream/pull-peek
+* pull-stream/pull-cache
 * regular/pull-generate
 
 # real-time
