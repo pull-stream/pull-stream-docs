@@ -65,6 +65,7 @@
 
 * pull-stream/stream-to-pull-stream
 * pull-stream/pull-stream-to-stream
+* queckezz/pull-promise
 
 # crypto
 
