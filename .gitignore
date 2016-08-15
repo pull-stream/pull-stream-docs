@@ -1,7 +1,5 @@
 node_modules
 npm-debug.log*
-/src/index.html
-/src/bundle.js
-/src/bundle.css
 /src/model.json
+/build
 .data

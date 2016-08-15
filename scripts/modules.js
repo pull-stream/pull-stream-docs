@@ -5,8 +5,6 @@ const assert = require('assert')
 
 const config = require('../config')
 
-const modulesMarkdown = fs.readFileSync(config.modules, 'utf8')
-
 module.exports = getModulesByCategory(
   fs.readFileSync(config.modules, 'utf8')
 )
