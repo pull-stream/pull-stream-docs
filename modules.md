@@ -69,6 +69,7 @@
 * pull-stream/pull-stream-to-stream
 * queckezz/pull-promise
 * jamen/pull-await
+* rjmk/static-land-pull-stream
 
 # crypto
 
