@@ -23,6 +23,7 @@
 * pull-stream/pull-peek
 * pull-stream/pull-cache
 * regular/pull-generate
+* nichoth/pull-combine-latest
 
 # real-time
 
