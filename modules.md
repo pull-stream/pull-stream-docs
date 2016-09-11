@@ -39,6 +39,7 @@
 * dominictarr/pull-write
 * dominictarr/pull-write-file
 * pull-stream/pull-watch
+* dominictarr/multiblob
 
 # text
 
