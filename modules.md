@@ -39,6 +39,9 @@
 * dominictarr/pull-write
 * dominictarr/pull-write-file
 * pull-stream/pull-watch
+* ipfs/interface-pull-blob-store
+* ipfs/js-fs-pull-blob-store
+* ipfs/js-idb-pull-blob-store
 
 # text
 
@@ -46,6 +49,7 @@
 * pull-stream/pull-stringify
 * dominictarr/pull-json-doubleline
 * pull-stream/pull-utf8-decoder
+* diasdavid/pull-ndjson
 
 # binary
 
