@@ -24,6 +24,7 @@
 * pull-stream/pull-cache
 * regular/pull-generate
 * nichoth/pull-combine-latest
+* nichoth/pull-scan
 
 # real-time
 
