@@ -51,7 +51,6 @@
 * dominictarr/pull-json-doubleline
 * pull-stream/pull-utf8-decoder
 * diasdavid/pull-ndjson
-* jamen/pull-css
 
 # binary
 
@@ -86,3 +85,7 @@
 # dom
 
 * pietgeursen/pull-dom-mutants
+
+# parser
+
+* jamen/pull-css
