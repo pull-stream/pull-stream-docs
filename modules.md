@@ -9,6 +9,7 @@
 * pull-stream/pull-many
 * pull-stream/pull-merge
 * pull-stream/pull-paramap
+* pull-stream/pull-flatmap
 * pull-stream/pull-pair
 * pull-stream/pull-through
 * pull-stream/pull-traverse
