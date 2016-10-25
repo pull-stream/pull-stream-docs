@@ -18,7 +18,8 @@
     "disc": "npm run --silent bundle -- --full-paths | discify --open",
     "push": "gh-pages -d build -o deploy -b master",
     "deploy:remote": "git remote add deploy git@github.com:pull-stream/pull-stream.github.io",
-    "deploy": "npm-run-all -s build push"
+    "deploy": "npm-run-all -s build push",
+    "travis": "if test \"$TRAVIS\" = \"true\" && test \"$TRAVIS_EVENT_TYPE\" != \"pull_request\" && test \"$TRAVIS_BRANCH\" = \"master\"; then npm run deploy; else npm run build; fi"
   },
   "browserify": {
     "transform": [
