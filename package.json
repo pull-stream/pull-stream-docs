@@ -6,7 +6,7 @@
   "scripts": {
     "test": "true",
     "bundle": "browserify src -g envify -g uglifyify -p [ css-extract -o build/bundle.css ]",
-    "build:sync": "node scripts sync",
+    "build:sync": "DEBUG=* node scripts sync",
     "build:html": "node scripts html",
     "build:js": "npm run --silent bundle -- -o build/bundle.js",
     "build": "npm-run-all -s build:*",
