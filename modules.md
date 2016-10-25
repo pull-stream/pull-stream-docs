@@ -44,6 +44,7 @@
 * ipfs/interface-pull-blob-store
 * ipfs/js-fs-pull-blob-store
 * ipfs/js-idb-pull-blob-store
+* jamen/pull-vinyl
 
 # text
 
