@@ -75,7 +75,7 @@
     "inu": "^2.3.1",
     "normalize.css": "^4.1.1",
     "pull-pushable": "^2.0.0",
-    "pull-stream": "^3.4.2",
+    "pull-stream": "github:pull-stream/pull-stream",
     "sheetify": "^5.0.1"
   }
 }
