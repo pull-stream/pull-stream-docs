@@ -61,6 +61,7 @@
 * dominictarr/pull-reader
 * dignifiedquire/pull-length-prefixed
 * dignifiedquire/pull-block
+* jamen/pull-stdio
 
 # networks
 
@@ -70,6 +71,7 @@
 * ssbc/muxrpc
 * pull-stream/pull-http-server
 * regular/pull-paginated-api-request
+* jamen/pull-fetch
 
 # interop
 
