@@ -72,6 +72,7 @@
 * pull-stream/pull-http-server
 * regular/pull-paginated-api-request
 * jamen/pull-fetch
+* ahdinosaur/pull-xhr
 
 # interop
 
