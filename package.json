@@ -6,7 +6,7 @@
   "scripts": {
     "test": "true",
     "bundle": "browserify src -g envify -g uglifyify -p [ css-extract -o build/bundle.css ]",
-    "build:sync": "node scripts sync",
+    "build:sync": "DEBUG=* node scripts sync",
     "build:html": "node scripts html",
     "build:js": "npm run --silent bundle -- -o build/bundle.js",
     "build": "npm-run-all -s build:*",
@@ -18,7 +18,8 @@
     "disc": "npm run --silent bundle -- --full-paths | discify --open",
     "push": "gh-pages -d build -o deploy -b master",
     "deploy:remote": "git remote add deploy git@github.com:pull-stream/pull-stream.github.io",
-    "deploy": "npm-run-all -s build push"
+    "deploy": "npm-run-all -s build push",
+    "travis": "if test \"$TRAVIS\" = \"true\" && test \"$TRAVIS_EVENT_TYPE\" != \"pull_request\" && test \"$TRAVIS_BRANCH\" = \"master\"; then npm run deploy; else npm run build; fi"
   },
   "browserify": {
     "transform": [
@@ -75,7 +76,7 @@
     "inu": "^2.3.1",
     "normalize.css": "^4.1.1",
     "pull-pushable": "^2.0.0",
-    "pull-stream": "^3.4.2",
+    "pull-stream": "github:pull-stream/pull-stream",
     "sheetify": "^5.0.1"
   }
 }

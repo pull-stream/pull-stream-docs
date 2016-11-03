@@ -9,6 +9,7 @@
 * pull-stream/pull-many
 * pull-stream/pull-merge
 * pull-stream/pull-paramap
+* pull-stream/pull-flatmap
 * pull-stream/pull-pair
 * pull-stream/pull-through
 * pull-stream/pull-traverse
@@ -24,6 +25,7 @@
 * pull-stream/pull-cache
 * regular/pull-generate
 * nichoth/pull-combine-latest
+* nichoth/pull-scan
 
 # real-time
 
@@ -39,6 +41,10 @@
 * dominictarr/pull-write
 * dominictarr/pull-write-file
 * pull-stream/pull-watch
+* ipfs/interface-pull-blob-store
+* ipfs/js-fs-pull-blob-store
+* ipfs/js-idb-pull-blob-store
+* jamen/pull-vinyl
 * dominictarr/multiblob
 
 # text
@@ -47,6 +53,7 @@
 * pull-stream/pull-stringify
 * dominictarr/pull-json-doubleline
 * pull-stream/pull-utf8-decoder
+* diasdavid/pull-ndjson
 
 # binary
 
@@ -55,6 +62,7 @@
 * dominictarr/pull-reader
 * dignifiedquire/pull-length-prefixed
 * dignifiedquire/pull-block
+* jamen/pull-stdio
 
 # networks
 
@@ -64,6 +72,8 @@
 * ssbc/muxrpc
 * pull-stream/pull-http-server
 * regular/pull-paginated-api-request
+* jamen/pull-fetch
+* ahdinosaur/pull-xhr
 
 # interop
 
@@ -81,3 +91,10 @@
 # dom
 
 * pietgeursen/pull-dom-mutants
+* pietgeursen/pull-dom-driver
+
+# parser
+
+* jamen/pull-css
+
+
