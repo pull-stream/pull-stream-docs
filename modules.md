@@ -26,6 +26,7 @@
 * regular/pull-generate
 * nichoth/pull-combine-latest
 * nichoth/pull-scan
+* dominictarr/pull-cont
 
 # real-time
 
