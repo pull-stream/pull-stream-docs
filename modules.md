@@ -27,6 +27,7 @@
 * nichoth/pull-combine-latest
 * nichoth/pull-scan
 * dominictarr/pull-cont
+* nichoth/pull-catch
 
 # real-time
 
