@@ -28,6 +28,9 @@
 * nichoth/pull-scan
 * dominictarr/pull-cont
 * nichoth/pull-catch
+* elavoie/pull-stream-function-to-object
+* elavoie/pull-eager-buffer
+
 
 # real-time
 
@@ -76,6 +79,10 @@
 * regular/pull-paginated-api-request
 * jamen/pull-fetch
 * ahdinosaur/pull-xhr
+* elavoie/pull-sync
+* elavoie/pull-limit
+* elavoie/pull-lend
+* elavoie/pull-lend-stream
 
 # interop
 
@@ -98,5 +105,9 @@
 # parser
 
 * jamen/pull-css
+
+# debugging
+
+* elavoie/pull-probe
 
 
