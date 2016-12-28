@@ -101,6 +101,7 @@
 
 * pietgeursen/pull-dom-mutants
 * pietgeursen/pull-dom-driver
+* santiagogil/pull-ric
 
 # parser
 
