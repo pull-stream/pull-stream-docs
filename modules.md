@@ -51,6 +51,7 @@
 * ipfs/js-idb-pull-blob-store
 * jamen/pull-vinyl
 * dominictarr/multiblob
+* tableflip/pull-file-reader
 
 # text
 
