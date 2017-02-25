@@ -30,6 +30,7 @@
 * nichoth/pull-catch
 * elavoie/pull-stream-function-to-object
 * elavoie/pull-eager-buffer
+* amsross/pull-fmap
 
 
 # real-time
