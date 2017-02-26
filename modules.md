@@ -108,6 +108,7 @@
 # parser
 
 * jamen/pull-css
+* jamen/pull-browserify
 
 # debugging
 
