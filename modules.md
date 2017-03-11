@@ -24,6 +24,7 @@
 * pull-stream/pull-peek
 * pull-stream/pull-cache
 * regular/pull-generate
+* regular/pull-debounce
 * nichoth/pull-combine-latest
 * nichoth/pull-scan
 * dominictarr/pull-cont
