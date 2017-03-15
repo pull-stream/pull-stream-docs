@@ -32,6 +32,7 @@
 * elavoie/pull-stream-function-to-object
 * elavoie/pull-eager-buffer
 * amsross/pull-fmap
+* nichoth/pull-flat-merge
 
 
 # real-time
