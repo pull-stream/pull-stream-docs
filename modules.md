@@ -26,6 +26,7 @@
 * regular/pull-generate
 * regular/pull-debounce
 * nichoth/pull-combine-latest
+* nichoth/pull-with-latest
 * nichoth/pull-scan
 * dominictarr/pull-cont
 * nichoth/pull-catch
