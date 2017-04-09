@@ -34,6 +34,7 @@
 * elavoie/pull-eager-buffer
 * amsross/pull-fmap
 * nichoth/pull-flat-merge
+* jdvorak/pull-offset-limit
 
 
 # real-time
