@@ -108,6 +108,8 @@
 * pietgeursen/pull-dom-mutants
 * pietgeursen/pull-dom-driver
 * santiagogil/pull-ric
+* nichoth/react-pull-stream
+* nichoth/yo-pull-stream
 
 # parser
 
