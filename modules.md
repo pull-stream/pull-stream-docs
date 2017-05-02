@@ -98,6 +98,7 @@
 * queckezz/pull-promise
 * jamen/pull-await
 * rjmk/static-land-pull-stream
+* jamen/babel-plugin-pull
 
 # crypto
 
