@@ -35,7 +35,7 @@
 * amsross/pull-fmap
 * nichoth/pull-flat-merge
 * jdvorak/pull-offset-limit
-
+* jamen/pull-prop
 
 # real-time
 
@@ -57,7 +57,6 @@
 * jamen/pull-vinyl
 * dominictarr/multiblob
 * tableflip/pull-file-reader
-* jamen/pull-files
 
 # text
 
@@ -99,6 +98,7 @@
 * jamen/pull-await
 * rjmk/static-land-pull-stream
 * jamen/babel-plugin-pull
+* jamen/pull-spawn-process
 
 # crypto
 
@@ -122,4 +122,8 @@
 
 * elavoie/pull-probe
 
+# build tools
 
+* jamen/pull-files
+* jamen/pull-bundle
+* jamen/pull-uglify
