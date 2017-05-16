@@ -10,6 +10,7 @@
 * pull-stream/pull-merge
 * pull-stream/pull-paramap
 * pull-stream/pull-flatmap
+* dominictarr/pull-map-last
 * pull-stream/pull-pair
 * pull-stream/pull-through
 * pull-stream/pull-traverse
