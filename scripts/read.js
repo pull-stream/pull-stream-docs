@@ -3,7 +3,6 @@ const Path = require('path')
 const ecosystem = require('ecosystem-docs')
 const remark = require('remark')
 const html = require('remark-html')
-const github = require('remark-github')
 const highlight = require('remark-highlight.js')
 const cheerio = require('cheerio')
 
@@ -105,7 +104,7 @@ function formatReadme (module) {
 
   var $ = cheerio.load(
     remark()
-      .use([html, github, highlight])
+      .use([html, highlight])
       .process(remark.stringify(ast))
   )
 
