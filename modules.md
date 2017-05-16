@@ -82,6 +82,7 @@
 * DamonOehlman/pull-ws
 * pull-stream/pull-ws-server
 * ssbc/muxrpc
+* ssbc/multiserver
 * pull-stream/pull-http-server
 * regular/pull-paginated-api-request
 * jamen/pull-fetch
