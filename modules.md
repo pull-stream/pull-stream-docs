@@ -43,6 +43,7 @@
 * pull-stream/pull-pushable
 * pull-stream/pull-notify
 * pull-stream/pull-live
+* dominictarr/pull-throttle
 
 # file system and databases
 
