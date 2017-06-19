@@ -102,6 +102,7 @@
 * rjmk/static-land-pull-stream
 * jamen/babel-plugin-pull
 * jamen/pull-spawn-process
+* nrkn/pull-iterable
 
 # crypto
 
