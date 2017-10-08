@@ -34,6 +34,7 @@
 * elavoie/pull-stream-function-to-object
 * elavoie/pull-eager-buffer
 * amsross/pull-fmap
+* amsross/pull-monad
 * nichoth/pull-flat-merge
 * jdvorak/pull-offset-limit
 * jamen/pull-prop
