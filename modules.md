@@ -104,6 +104,7 @@
 * jamen/babel-plugin-pull
 * jamen/pull-spawn-process
 * nrkn/pull-iterable
+* maackle/pull2chan
 
 # crypto
 
