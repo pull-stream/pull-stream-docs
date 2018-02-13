@@ -38,7 +38,6 @@
 * amsross/pull-tap
 * nichoth/pull-flat-merge
 * jdvorak/pull-offset-limit
-* jamen/pull-prop
 
 # real-time
 
@@ -59,8 +58,10 @@
 * ipfs/js-fs-pull-blob-store
 * ipfs/js-idb-pull-blob-store
 * jamen/pull-vinyl
+* jamen/pull-files
 * dominictarr/multiblob
 * tableflip/pull-file-reader
+
 
 # text
 
@@ -101,9 +102,7 @@
 * pull-stream/stream-to-pull-stream
 * pull-stream/pull-stream-to-stream
 * queckezz/pull-promise
-* jamen/pull-await
 * rjmk/static-land-pull-stream
-* jamen/babel-plugin-pull
 * jamen/pull-spawn-process
 * nrkn/pull-iterable
 * maackle/pull2chan
@@ -124,14 +123,7 @@
 # parser
 
 * jamen/pull-css
-* jamen/pull-browserify
 
 # debugging
 
 * elavoie/pull-probe
-
-# build tools
-
-* jamen/pull-files
-* jamen/pull-bundle
-* jamen/pull-uglify
