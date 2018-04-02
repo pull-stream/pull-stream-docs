@@ -38,6 +38,7 @@
 * amsross/pull-tap
 * nichoth/pull-flat-merge
 * jdvorak/pull-offset-limit
+* dominictarr/pull-group
 
 # real-time
 
