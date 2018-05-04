@@ -106,6 +106,7 @@
 * jamen/pull-spawn-process
 * nrkn/pull-iterable
 * maackle/pull2chan
+* brechtcs/pull-resolve
 
 # crypto
 
