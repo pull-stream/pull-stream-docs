@@ -39,6 +39,7 @@
 * nichoth/pull-flat-merge
 * jdvorak/pull-offset-limit
 * dominictarr/pull-group
+* elavoie/pull-stubborn
 
 # real-time
 
