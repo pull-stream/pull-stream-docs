@@ -109,6 +109,8 @@
 * nrkn/pull-iterable
 * maackle/pull2chan
 * brechtcs/pull-resolve
+* alanshaw/pull-stream-to-async-iterator
+* alanshaw/async-iterator-to-pull-stream
 
 # crypto
 
