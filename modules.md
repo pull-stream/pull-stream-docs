@@ -40,6 +40,7 @@
 * jdvorak/pull-offset-limit
 * dominictarr/pull-group
 * elavoie/pull-stubborn
+* devinivy/pull-readyable
 
 # real-time
 
